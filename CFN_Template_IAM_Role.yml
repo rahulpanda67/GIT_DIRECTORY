@@ -1,0 +1,72 @@
+## =================== VERSION ===================
+AWSTemplateFormatVersion: '2010-09-09'
+
+## =================== DESCRIPTION ===================
+Description: >-
+  AWS CloudFormation sample template
+  Create an IAM Role
+  AWS doc: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html
+  WEB URL Reference: https://dev.to/tiamatt/hands-on-aws-cloudformation-part-5-iam-users-groups-and-roles-5d9f
+
+## =================== PARAMETERS ===================
+Parameters:
+  paramRoleName:
+    Description: Unique name for a new role within the account
+    Type: String
+    MinLength: 3
+    AllowedPattern: "^[a-zA-Z][a-zA-Z0-9]{1,64}$"
+    ConstraintDescription: Role name must be between 1 and 64 alphanumeric characters in length, starting with an uppercase or lowercase character of the alphabet
+  paramMaxSessionDuration:
+    Description: The maximum session duration (in seconds) that you want to set for the specified role
+    Type: Number
+    MinValue: 3600 # 1 hour
+    MaxValue: 43200 # 12 hours
+    Default: 7200 # 2 hours
+  paramPath:
+    Description: IAM Path that you want to associate with the role 
+    Type: String
+    AllowedPattern: (^\/$)|(^\/.*\/$)
+    Default: '/'
+  paramTagValue:
+    Description: Tag value that identifies resources as a target for deployments
+    Type: String
+    Default: DoloresAbernathy
+    AllowedPattern: "[\\x20-\\x7E]*"
+    ConstraintDescription: Must contain only ASCII characters
+
+## =================== RESOURCES ===================
+Resources:
+  myRole:
+    Type: 'AWS::IAM::Role'
+    Properties: 
+      RoleName: !Ref paramRoleName # give a name to this role
+      Description: IAM role for DB Admins
+      AssumeRolePolicyDocument: # (required) only one trust policy with a role
+       Version: '2012-10-17'
+       Statement: 
+         - 
+            Effect: Allow
+            Principal: 
+              Service: 
+                - 's3.amazonaws.com'
+            Action: 
+              - 'sts:AssumeRole'
+      MaxSessionDuration: !Ref paramMaxSessionDuration
+      Path: !Ref paramPath
+      ManagedPolicyArns: # list of ARNs of IAM managed policies that you want to attach to the group
+        - arn:aws:iam::863914133385:policy/RDS-S3-Policy # provide administrator access to AWS RDS S3
+      Tags:
+        - Key: Name
+          Value: !Ref paramTagValue
+
+## =================== OUTPUT ===================
+Outputs:
+  outputName:
+    Description: Role name
+    Value: !Ref myRole
+  outputArn:
+    Description: Role ARN
+    Value: !GetAtt myRole.Arn
+  outputId:
+    Description: Role ID
+    Value: !GetAtt myRole.RoleId
