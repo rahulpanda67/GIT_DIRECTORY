@@ -47,7 +47,7 @@
         "TimeStamp": {
             "Type": "String",
             "Description": "The Date and Time the AWS resource was created in Format :: YYYY-MM-DD HH:MM:SS",
-            "AllowedPattern": "^\\d{4} (-\\d{2}){2}T(\\d{2}:){2}\\d{2}Z$",
+            "AllowedPattern": "^\\d{4}(-\\d{2}){2}T(\\d{2}:){2}\\d{2}Z$",
             "ConstraintDescription": "Date and Time of creation format must be YYYY-MM-DD HH:MM:SS"
         },
         "CostCenter": {
