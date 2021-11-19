@@ -35,13 +35,13 @@
         "Environment": {
             "Type": "String",
             "Description": "Environment to which the resource was deployed",
-            "AllowedPattern": [ "dev", "dit", "sit", "uat", "prod", "dr", "blueuat", "greenprod", "blueprod" ],
+            "AllowedValues": [ "dev", "dit", "sit", "uat", "prod", "dr", "blueuat", "greenprod", "blueprod" ],
             "ConstraintDescription": "Environment must be one of the available values."
         },
         "Organization": {
             "Type": "String",
             "Description": "Business Unit that owns the application",
-            "AllowedPattern": [ "CTG", "ECC", "ECS", "PI", "FI" ],
+            "AllowedValues": [ "CTG", "ECC", "ECS", "PI", "FI" ],
             "ConstraintDescription": "Organization must be one of the available values."
         },
         "TimeStamp": {
