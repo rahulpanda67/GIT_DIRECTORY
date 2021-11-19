@@ -4,7 +4,7 @@
         "ParameterValue": "AP123456"
     },
     {
-        "ParameterKey": "Name",
+        "ParameterKey": "DBSubnetGroupName",
         "ParameterValue": "rds-subnet-group"
     },
     {
@@ -21,7 +21,7 @@
     },
     {
         "ParameterKey": "DBSubnetGroupDescription",
-        "ParameterValue": "rds-subnet-group"
+        "ParameterValue": "RDS Subnet Group"
     },
     {
         "ParameterKey": "Environment",
