@@ -1,14 +1,16 @@
-[
-    { "ParameterKey": "ApplicationId", "ParameterValue": "AP123456" },
-    { "ParameterKey": "DBSubnetGroupName", "ParameterValue": "rds-subnet-group" },
-    { "ParameterKey": "ApplicationName", "ParameterValue": "AP123456" },
-    { "ParameterKey": "CostCenter", "ParameterValue": "12345" },
-    { "ParameterKey": "CreatedBy", "ParameterValue": "a111111" },
-    { "ParameterKey": "DBSubnetGroupDescription", "ParameterValue": "RDS DB Subnet Group" },
-    { "ParameterKey": "Environment", "ParameterValue": "dev" },
-    { "ParameterKey": "Organization", "ParameterValue": "PI" },
-    { "ParameterKey": "Owner", "ParameterValue": "a111111" },
-    { "ParameterKey": "ResourceTag", "ParameterValue": "dev" },
-    { "ParameterKey": "SubnetIds", "ParameterValue": "subnet-0cd588de6a0b094b2,subnet-0801ee3cdde38be07" },
-    { "ParameterKey": "TimeStamp", "ParameterValue": "2021-11-18T11:05:00Z" }
-]
+{
+    "Parameters": {
+        "ApplicationId" : "AP123456",
+        "DBSubnetGroupName" : "rds-subnet-group",
+        "ApplicationName" : "AP123456",
+        "CostCenter" : "12345",
+        "CreatedBy" : "a111111",
+        "DBSubnetGroupDescription" : "RDS DB Subnet Group",
+        "Environment" : "dev",
+        "Organization" : "PI",
+        "Owner" : "a111111",
+        "ResourceTag" : "dev",
+        "SubnetIds" : "subnet-0cd588de6a0b094b2,subnet-0801ee3cdde38be07",
+        "TimeStamp" : "2021-11-18T11:05:00Z"
+    }
+}
