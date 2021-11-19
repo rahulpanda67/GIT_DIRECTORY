@@ -1,4 +1,4 @@
-{
+[
     {
         "ParameterKey": "ApplicationId",
         "ParameterValue": "AP123456"
@@ -47,4 +47,4 @@
         "ParameterKey": "TimeStamp",
         "ParameterValue": "2021-11-18T11:05:00Z"
     }
-}
+]
