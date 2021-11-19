@@ -4,6 +4,10 @@
         "ParameterValue": "AP123456"
     },
     {
+        "ParameterKey": "Name",
+        "ParameterValue": "rds-subnet-group"
+    },
+    {
         "ParameterKey": "ApplicationName",
         "ParameterValue": "AP123456"
     },
