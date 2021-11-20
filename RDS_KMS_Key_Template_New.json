@@ -67,7 +67,6 @@
     "Resources": {
         "RDSKMSKey": {
             "Type": "AWS::KMS::Key",
-            "DeletionPolicy": "Retain",
             "Properties": {
                 "Description": { "Ref": "Description" },
                 "Enabled": "True",
@@ -93,10 +92,46 @@
                         {
                             "Sid": "Must allow to root to use of the key",
                             "Effect": "Allow",
+                            "Principal": { "AWS": "arn:aws:iam::863914133385:root" },
+                            "Action": "kms:*",
+                            "Resource": "*"
+                        },
+                        {
+                            "Sid": "Allow administration of the key",
+                            "Effect": "Allow",
                             "Principal": {
                                 "AWS": "arn:aws:iam::863914133385:root"
                             },
-                            "Action": "kms:*",
+                            "Action": [
+                                "kms:Create*",
+                                "kms:Describe*",
+                                "kms:Enable*",
+                                "kms:List*",
+                                "kms:Put*",
+                                "kms:Update*",
+                                "kms:Revoke*",
+                                "kms:Disable*",
+                                "kms:Get*",
+                                "kms:Delete*",
+                                "kms:ScheduleKeyDeletion",
+                                "kms:CancelKeyDeletion"
+                            ],
+                            "Resource": "*"
+                        },
+                        {
+                            "Sid": "Allow use of the key",
+                            "Effect": "Allow",
+                            "Principal": {
+                                "AWS": "arn:aws:iam::863914133385:root"
+                            },
+                            "Action": [
+                                "kms:DescribeKey",
+                                "kms:Encrypt",
+                                "kms:Decrypt",
+                                "kms:ReEncrypt*",
+                                "kms:GenerateDataKey",
+                                "kms:GenerateDataKeyWithoutPlaintext"
+                            ],
                             "Resource": "*"
                         }
                     ]
