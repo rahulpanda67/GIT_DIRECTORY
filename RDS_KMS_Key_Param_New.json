@@ -5,7 +5,6 @@
         "ApplicationName" : "RDS KMS Deployment",
         "CostCenter" : "12345",
         "CreatedBy" : "a111111",
-        "MasterKeyAlias" : "rds-kms",
         "Environment" : "dev",
         "Organization" : "PI",
         "Owner" : "a111111",
