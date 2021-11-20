@@ -67,7 +67,7 @@
     },
     "Resources": {
         "RDSSecurityGroup": {
-            "Type": "AWS::RDS::SecurityGroup",
+            "Type": "AWS::EC2::SecurityGroup",
             "Properties": {
                 "SecurityGroupName": { "Ref": "SecurityGroupName" },
                 "SecurityGroupDescription": { "Ref": "SecurityGroupDescription" },
