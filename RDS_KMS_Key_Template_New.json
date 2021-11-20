@@ -90,7 +90,7 @@
                     "Id": "key-default-1",
                     "Statement": [
                         {
-                            "Sid": "Must allow to root to use of the key",
+                            "Sid": "Allow administration of the key",
                             "Effect": "Allow",
                             "Principal": { "AWS": "arn:aws:iam::863914133385:root" },
                             "Action": "kms:*",
@@ -100,7 +100,7 @@
                             "Sid": "Allow administration of the key",
                             "Effect": "Allow",
                             "Principal": {
-                                "AWS": "arn:aws:iam::863914133385:user/dbadmin"
+                                "AWS": "arn:aws:iam::863914133385:root"
                             },
                             "Action": [
                                 "kms:Create*",
