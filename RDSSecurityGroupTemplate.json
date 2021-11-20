@@ -69,8 +69,8 @@
         "RDSSecurityGroup": {
             "Type": "AWS::EC2::SecurityGroup",
             "Properties": {
-                "SecurityGroupName": { "Ref": "SecurityGroupName" },
-                "SecurityGroupDescription": { "Ref": "SecurityGroupDescription" },
+                "GroupName": { "Ref": "SecurityGroupName" },
+                "GroupDescription": { "Ref": "SecurityGroupDescription" },
                 "VpcId": { "Ref": "VpcId" },
                 "Tags": [
                     { "Key": "Name", "Value": { "Ref": "SecurityGroupName" } },
