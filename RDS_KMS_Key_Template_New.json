@@ -100,7 +100,7 @@
                             "Sid": "Allow administration of the key",
                             "Effect": "Allow",
                             "Principal": {
-                                "AWS": "arn:aws:iam::863914133385:root"
+                                "AWS": "arn:aws:iam::863914133385:user/dbadmin"
                             },
                             "Action": [
                                 "kms:Create*",
@@ -122,7 +122,7 @@
                             "Sid": "Allow use of the key",
                             "Effect": "Allow",
                             "Principal": {
-                                "AWS": "arn:aws:iam::863914133385:root"
+                                "AWS": "arn:aws:iam::863914133385:user/dbadmin"
                             },
                             "Action": [
                                 "kms:DescribeKey",
