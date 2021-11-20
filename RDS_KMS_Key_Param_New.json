@@ -2,7 +2,7 @@
     "Parameters": {
         "ApplicationId" : "AP123456",
         "Description" : "RDS KMS Key",
-        "ApplicationName" : "RDS Subnet Component",
+        "ApplicationName" : "RDS KMS Deployment",
         "CostCenter" : "12345",
         "CreatedBy" : "a111111",
         "MasterKeyAlias" : "rds-kms",
@@ -10,7 +10,6 @@
         "Organization" : "PI",
         "Owner" : "a111111",
         "ResourceTag" : "dev",
-        "SubnetIds" : "subnet-0cd588de6a0b094b2,subnet-0801ee3cdde38be07",
         "TimeStamp" : "2021-11-18T11:05:00Z"
     }
 }
