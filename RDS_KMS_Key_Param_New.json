@@ -2,7 +2,6 @@
     "Parameters": {
         "ApplicationId" : "AP123456",
         "Description" : "RDS KMS Key",
-        "DBSubnetGroupName" : "rds-subnet-group",
         "ApplicationName" : "RDS Subnet Component",
         "CostCenter" : "12345",
         "CreatedBy" : "a111111",
