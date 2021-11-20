@@ -68,9 +68,9 @@
         "RDSKMSKey": {
             "Type": "AWS::KMS::Key",
             "Properties": {
+                "EnableKeyRotation": true,
+                "MultiRegion": false,
                 "Description": { "Ref": "Description" },
-                "Enabled": "True",
-                "EnableKeyRotation": "true",
                 "Tags": [
                     { "Key": "Name", "Value": { "Ref": "MasterKeyAlias" } },
                     { "Key": "StackName", "Value": { "Ref": "AWS::StackName" } },
@@ -91,7 +91,20 @@
                         {
                             "Sid": "Enable IAM User Permissions",
                             "Effect": "Allow",
-                            "Principal": { "AWS": { "arn:aws:iam::863914133385:root" } },
+                            "Principal": {
+                                "AWS": {
+                                    "Fn::Join": [
+                                        "",
+                                        [
+                                            "arn:aws:iam::",
+                                            {
+                                                "Ref": "AWS::AccountId"
+                                            },
+                                            ":root"
+                                        ]
+                                    ]
+                                }
+                            },
                             "Action": "kms:*",
                             "Resource": "*"
                         }
@@ -99,5 +112,5 @@
                 }
             }
         }
-    }    
+    }
 }
