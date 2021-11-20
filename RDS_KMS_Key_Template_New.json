@@ -98,39 +98,6 @@
                             },
                             "Action": "kms:*",
                             "Resource": "*"
-                        },
-                        {
-                            "Sid": "Deny Delete",
-                            "Effect": "Deny",
-                            "Principal": "*",
-                            "Action": [
-                                "kms:ScheduleKeyDeletion",
-                                "kms:DeleteCustomKeyStore",
-                                "kms:DeleteImportedKeyMaterial"
-                            ],
-                            "Resource": "*"
-                        },
-                        {
-                            "Sid": "Deny Administration of the key",
-                            "Effect": "Deny",
-                            "Principal": "*",
-                            "Action": [
-                                "kms:CreateAlias",
-                                "kms:CreatedKey",
-                                "kms:Enabled",
-                                "kms:Put*",
-                                "kms:Update",
-                                "kms:Disable",
-                                "kms:Delete",
-                                "kms:Import",
-                                "kms:CancelKeyDeletion"
-                            ],
-                            "Resource": "*",
-                            "Condition": {
-                                "StringNotLike": {
-                                    "aws:PrincipalArn": "arn:aws:iam::863914133385:root"
-                                }
-                            }
                         }
                     ]
                 }
