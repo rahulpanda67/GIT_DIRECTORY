@@ -88,13 +88,13 @@
                 ],
                 "KeyPolicy": {
                     "Version": "2012-10-17",
-                    "Id": {"Fn:Sub": "Key policy for ${MasteKeyAlias}"},
+                    "Id": "key-default-1",
                     "Statement": [
                         {
                             "Sid": "Must allow to root to use of the key",
                             "Effect": "Allow",
                             "Principal": {
-                                "AWS": { "Fn::Sub": "arn:aws:iam::${AWS::AccountId}:root" }
+                                "AWS": "arn:aws:iam::863914133385:root"
                             },
                             "Action": "kms:*",
                             "Resource": "*"
@@ -129,7 +129,7 @@
                             "Condition": {
                                 "StringNotLike": {
                                     "aws:PrincipalArn": [
-                                        {"Fn::Sub": "arn:aws:iam::${AWS::AccountId}:root"}
+                                        "arn:aws:iam::863914133385:root"
                                     ]
                                 }
                             }
@@ -141,7 +141,7 @@
         "RDSKMSKeyAlias": {
             "Type": "AWS::KMS::Alias",
             "Properties": {
-                "AliasName": {"Fn::Sub": "alias/${MasterKeyAlias"},
+                "AliasName": "alias/${MasterKeyAlias",
                 "TargetKeyId": {"Ref": "RDSKMSKey"}
             }
         }
