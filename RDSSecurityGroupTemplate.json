@@ -88,35 +88,35 @@
                 ],
                 "SecurityGroupEgress": [
                     {
-                        "CidrIP": "127.0.0.1/32",
+                        "CidrIp": "127.0.0.1/32",
                         "Description": "No Egress",
                         "IpProtocol": "-1"
                     }
                 ],
                 "SecurityGroupIngress": [
                     {
-                        "CidrIP": "10.0.0.0/8",
+                        "CidrIp": "10.0.0.0/8",
                         "Description": "MySql/Aurora",
                         "IpProtocol": "TCP",
                         "FromPort": 3306,
                         "ToPort": 3306
                     },
                     {
-                        "CidrIP": "10.0.0.0/8",
+                        "CidrIp": "10.0.0.0/8",
                         "Description": "PostgreSQL Database",
                         "IpProtocol": "TCP",
                         "FromPort": 5432,
                         "ToPort": 5432
                     },
                     {
-                        "CidrIP": "10.0.0.0/8",
+                        "CidrIp": "10.0.0.0/8",
                         "Description": "Oracle Database",
                         "IpProtocol": "TCP",
                         "FromPort": 1521,
                         "ToPort": 1521
                     },
                     {
-                        "CidrIP": "10.0.0.0/8",
+                        "CidrIp": "10.0.0.0/8",
                         "Description": "SQLServer Database",
                         "IpProtocol": "TCP",
                         "FromPort": 1433,
