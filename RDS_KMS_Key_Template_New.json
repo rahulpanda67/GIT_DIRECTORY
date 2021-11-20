@@ -2,12 +2,6 @@
     "AWSTemplateFormatVersion": "2010-09-09",
     "Description": "Template to create a RDS KMS Key",
     "Parameters": {
-        "MasterKeyAlias": {
-            "Description": "Alias for the master key",
-            "Type": "String",
-            "ConstraintDescription": "The Alias must be uniqueue in the region.",
-            "Default": "rds-kms-key"
-        },
         "Description": {
             "Description": "Description of the KMS Key",
             "Type": "String",
