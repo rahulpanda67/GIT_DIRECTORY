@@ -86,7 +86,7 @@
                     { "Key": "Organization", "Value": { "Ref": "Organization" } }
                 ],
                 "KeyPolicy": {
-                    "Version": "2012-10-17"
+                    "Version": "2012-10-17",
                     "Statement": [
                         {
                             "Sid": "Enable IAM User Permissions",
