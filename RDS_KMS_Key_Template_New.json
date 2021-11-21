@@ -2,6 +2,12 @@
     "AWSTemplateFormatVersion": "2010-09-09",
     "Description": "Template to create a RDS KMS Key",
     "Parameters": {
+        "MasterKeyAlias": {
+            "Description": "Alias for the master key",
+            "Type": "String",
+            "ConstraintDescription": "The Alias must be uniqueue in the region.",
+            "Default": "rds-kms-key"
+        },
         "Description": {
             "Description": "Description of the KMS Key",
             "Type": "String",
@@ -100,9 +106,56 @@
                             },
                             "Action": "kms:*",
                             "Resource": "*"
+                        },
+                        {
+                            "Sid": "Enable IAM User Permissions",
+                            "Effect": "Allow",
+                            "Principal": {
+                                "AWS": {
+                                    "Fn::Join": [
+                                        "",
+                                        [
+                                            "arn:aws:iam::",
+                                            {
+                                                "Ref": "AWS::AccountId"
+                                            },
+                                            ":role/CloudFormation_deploy_role"
+                                        ]
+                                    ]
+                                }
+                            },
+                            "Action": "kms:*",
+                            "Resource": "*"
+                        },
+                        {
+                            "Sid": "Enable IAM User Permissions",
+                            "Effect": "Allow",
+                            "Principal": {
+                                "AWS": {
+                                    "Fn::Join": [
+                                        "",
+                                        [
+                                            "arn:aws:iam::",
+                                            {
+                                                "Ref": "AWS::AccountId"
+                                            },
+                                            ":role/codepipeline_service_role"
+                                        ]
+                                    ]
+                                }
+                            },
+                            "Action": "kms:*",
+                            "Resource": "*"
                         }
                     ]
                 }
+            }
+        },
+        "RDSKMSKeyAlias": {
+            "Type": "AWS::KMS::Alias",
+            "Properties": {
+                "AliasName": {"Fn::Sub": "alias/${MasterKeyAlias"},
+                "TargetKeyId": {"Ref": "RDSKMSKey"}
             }
         }
     }
