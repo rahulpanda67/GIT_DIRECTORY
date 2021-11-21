@@ -29,6 +29,26 @@
                             },
                             "Action": "kms:*",
                             "Resource": "*"
+                        },
+                        {
+                            "Sid": "Enable IAM User Permissions",
+                            "Effect": "Allow",
+                            "Principal": {
+                                "AWS": {
+                                    "Fn::Join": [
+                                        "",
+                                        [
+                                            "arn:aws:iam::",
+                                            {
+                                                "Ref": "AWS::AccountId"
+                                            },
+                                            ":role/codepipeline_service_role"
+                                        ]
+                                    ]
+                                }
+                            },
+                            "Action": "kms:*",
+                            "Resource": "*"
                         }
                     ]
                 }
