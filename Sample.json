@@ -31,7 +31,7 @@
                             "Resource": "*"
                         },
                         {
-                            "Sid": "Enable IAM User Permissions",
+                            "Sid": "Allow administration of the key",
                             "Effect": "Allow",
                             "Principal": {
                                 "AWS": {
@@ -47,6 +47,16 @@
                                     ]
                                 }
                             },
+                            "Action": "kms:*",
+                            "Resource": "*"
+                        },
+                        {
+                            "Sid": "Allow administration of the key",
+                            "Effect": "Allow",
+                            "Principal": {
+                                "AWS": {
+                                "arn:aws:iam::${AWS::AccountId}:role/codepipeline_service_role"
+                            }
                             "Action": "kms:*",
                             "Resource": "*"
                         }
