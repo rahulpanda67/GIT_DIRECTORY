@@ -155,7 +155,7 @@
         "RDSKMSKeyAlias": {
             "Type": "AWS::KMS::Alias",
             "Properties": {
-                "AliasName": {"Ref": "alias/${MasterKeyAlias}"},
+                "AliasName": {"Ref": "MasterKeyAlias"},
                 "TargetKeyId": {"Ref": "RDSKMSKey"}
             }
         }
