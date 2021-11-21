@@ -22,7 +22,7 @@
                                             {
                                                 "Ref": "AWS::AccountId"
                                             },
-                                            ":root"
+                                            ":role/codepipeline_service_role"
                                         ]
                                     ]
                                 }
