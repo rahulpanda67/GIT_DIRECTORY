@@ -57,7 +57,7 @@
                                 "AWS": {
                                 "arn:aws:iam::${AWS::AccountId}:role/codepipeline_service_role"
                                 }
-                            }
+                            },
                             "Action": "kms:*",
                             "Resource": "*"
                         }
